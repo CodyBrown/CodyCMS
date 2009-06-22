@@ -1,0 +1,26 @@
+
+<h1>New post</h1>
+
+<% form_for(@post) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :body %><br />
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+
+<h1>Listing posts</h1>
+
+ <%= render :partial => @posts %>
+
+
+<%= link_to 'New post', new_post_path %>
